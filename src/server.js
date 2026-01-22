@@ -29,9 +29,12 @@ const __dirname = path.dirname(__filename);
 // CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173", // Local development ke liye
+      "https://job-portal-app-psi.vercel.app", // Aapka live frontend URL
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    credentials: true, // Cookies aur headers allow karne ke liye
   }),
 );
 
